@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BusinessModelLayer.profileItem>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding:120px;margin:120px">
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-left mb-0">Profile Items</h2>
+                            <div class="breadcrumb-wrapper col-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="content-body">
+                <!-- Basic Tables start -->
+                <div class="row" id="basic-table">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Profile Items</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <a class="btn btn-success waves-effect waves-light" asp-controller="profileItems" asp-action="Create">Add New Item</a>
+                                    <!-- Table with outer spacing -->
+                                    <div class="table-responsive">
+                                        <table class="table table-hover dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th> itemName</th>
+                                                    <th>itemImage</th>
+                                                    <th>itemDescription</th>
+                                                    <th>gitHubLink</th>
+                                                    <th>ItemUrl</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@item.itemName</td>
+                                                        <td><img src="~/img/portfolio/@item.itemImage" width="60" height="60" /></td>
+
+                                                        <td>@item.itemDescription</td>
+                                                        <td>@item.gitHubLink </td>
+                                                        <td> @item.ItemUrl</td>
+                                                        <td>
+                                                            <a asp-action="Edit" asp-route-id="@item.Id" class=" fas fa-edit"></a> |
+                                                            <a onclick="return confirm('Are You Shure')" asp-action="Delete" asp-route-id="@item.Id" class="fa fa-trash"></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Basic Tables end -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

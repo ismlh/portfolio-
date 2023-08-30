@@ -1,0 +1,113 @@
+﻿@model BusinessModelLayer.profileItem
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding:120px;margin:120px">
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-left mb-0">New Item</h2>
+                            <div class="breadcrumb-wrapper col-12">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Basic Horizontal form layout section start -->
+                <section id="basic-horizontal-layouts">
+                    <div class="row match-height">
+                        <div class="col-md-12 col-12">
+                            <div class="card" style="height: 420.219px;">
+                                <div class="card-header">
+
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" asp-action="Create" role="form">
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-2">
+                                                                <span>Item Name</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input asp-for="itemName" class="form-control" placeholder="Item Name" />
+                                                                <span asp-validation-for="itemName" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-2">
+                                                                <span> Item Descripation </span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input asp-for="itemDescription" class="form-control" placeholder="Item Description">
+                                                                <span asp-validation-for="itemDescription" class="label danger"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-2">
+                                                                <span>Item GithupUrl</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input asp-for="gitHubLink" class="form-control" placeholder="www.githup.com">
+                                                                <span asp-validation-for="gitHubLink" class="label danger"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-2">
+                                                                <span>Item Url</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input asp-for="ItemUrl" class="form-control">
+                                                                <span asp-validation-for="ItemUrl" class="label danger"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-2">
+                                                                <span>Item Image</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <input type="file" name="Files" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-8 offset-md-4">
+                                                        <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                                                        <button type="reset" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Reset</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- // Basic Horizontal form layout section end -->
+            </div>
+        </div>
+    </div>
+</div>
+
